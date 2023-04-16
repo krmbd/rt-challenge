@@ -1,0 +1,16 @@
+---
+Checks: "*,
+         -abseil*,
+         -altera*,
+         -android*,
+         -boost*,
+         -darwin*,
+         -fuchsia*,
+         -google*,
+         -linuxkernel*,
+         -llvm*,
+         -llvmlibc*,
+         -zircon*,
+
+         -modernize-use-trailing-return-type"
+...

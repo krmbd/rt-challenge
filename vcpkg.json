@@ -1,0 +1,11 @@
+{
+    "name": "rt-challenge",
+    "dependencies": [],
+    "default-features": [],
+    "features": { 
+        "tests": {
+            "description": "Build tests",
+            "dependencies": ["catch2"]
+        }
+    }
+}

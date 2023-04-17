@@ -13,10 +13,10 @@ project(
 include(cmake/variables.cmake)
 
 # ---- Declare library ----
-add_library(rt-lib OBJECT src/lib.cpp)
+add_library(rt-lib INTERFACE)
 
-target_compile_features(rt-lib PUBLIC cxx_std_20)
-target_include_directories(rt-lib PUBLIC "${PROJECT_SOURCE_DIR}/src")
+target_compile_features(rt-lib INTERFACE cxx_std_20)
+target_include_directories(rt-lib INTERFACE "${PROJECT_SOURCE_DIR}/src")
 
 # ---- Declare executable ----
 add_executable(rt-exe src/main.cpp)

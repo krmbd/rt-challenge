@@ -1,9 +1,7 @@
 #include <iostream>
 
-#include "lib.hpp"
-
 int main()
 {
-    std::cout << helloworld() << "\n";
+    std::cout << "Hello, world!\n";
     return 0;
 }

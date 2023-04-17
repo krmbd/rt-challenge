@@ -12,5 +12,7 @@ Checks: "*,
          -llvmlibc*,
          -zircon*,
 
-         -modernize-use-trailing-return-type"
+         -cppcoreguidelines-avoid-magic-numbers
+         -modernize-use-trailing-return-type
+         -readability-magic-numbers"
 ...

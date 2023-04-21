@@ -21,14 +21,14 @@ public:
 bool operator==(Vector lhs, Vector rhs);
 std::ostream& operator<<(std::ostream& ostream, Vector vector);
 
-Vector operator+(Vector vector1, Vector vector2);
-Vector operator-(Vector vector1, Vector vector2);
+Vector operator+(Vector lhs, Vector rhs);
+Vector operator-(Vector lhs, Vector rhs);
 Vector operator-(Point point1, Point point2);
 Vector operator-(Vector vector);
 Vector operator*(double scalar, Vector vector);
 Vector operator/(Vector vector, double scalar);
 
 double Magnitude(Vector vector);
+double Dot(Vector lhs, Vector rhs);
 Vector Normalize(Vector vector);
-double Dot(Vector vector1, Vector vector2);
-Vector Cross(Vector vector1, Vector vector2);
+Vector Cross(Vector lhs, Vector rhs);

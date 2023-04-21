@@ -14,14 +14,14 @@ std::ostream& operator<<(std::ostream& ostream, Vector vector)
     return ostream;
 }
 
-Vector operator+(Vector vector1, Vector vector2)
+Vector operator+(Vector lhs, Vector rhs)
 {
-    return Vector{ vector1.x + vector2.x, vector1.y + vector2.y, vector1.z + vector2.z };
+    return Vector{ lhs.x + rhs.x, lhs.y + rhs.y, lhs.z + rhs.z };
 }
 
-Vector operator-(Vector vector1, Vector vector2)
+Vector operator-(Vector lhs, Vector rhs)
 {
-    return Vector{ vector1.x - vector2.x, vector1.y - vector2.y, vector1.z - vector2.z };
+    return Vector{ lhs.x - rhs.x, lhs.y - rhs.y, lhs.z - rhs.z };
 }
 
 Vector operator-(Point point1, Point point2)
@@ -49,18 +49,17 @@ double Magnitude(Vector vector)
     return std::sqrt(vector.x * vector.x + vector.y * vector.y + vector.z * vector.z);
 }
 
+double Dot(Vector lhs, Vector rhs)
+{
+    return lhs.x * rhs.x + lhs.y * rhs.y + lhs.z * rhs.z;
+}
+
 Vector Normalize(Vector vector)
 {
     return vector / Magnitude(vector);
 }
 
-double Dot(Vector vector1, Vector vector2)
+Vector Cross(Vector lhs, Vector rhs)
 {
-    return vector1.x * vector2.x + vector1.y * vector2.y + vector1.z * vector2.z;
-}
-
-Vector Cross(Vector vector1, Vector vector2)
-{
-    return Vector{ vector1.y * vector2.z - vector1.z * vector2.y, vector1.z * vector2.x - vector1.x * vector2.z,
-                   vector1.x * vector2.y - vector1.y * vector2.x };
+    return Vector{ lhs.y * rhs.z - lhs.z * rhs.y, lhs.z * rhs.x - lhs.x * rhs.z, lhs.x * rhs.y - lhs.y * rhs.x };
 }

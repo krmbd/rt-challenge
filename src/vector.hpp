@@ -18,3 +18,5 @@ public:
 
 bool operator==(Vector lhs, Vector rhs);
 std::ostream& operator<<(std::ostream& ostream, Vector vector);
+
+Vector operator+(Vector vector1, Vector vector2);

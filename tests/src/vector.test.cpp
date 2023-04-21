@@ -37,4 +37,15 @@ TEST_CASE("Equality for two slightly different Vectors", "[vector]")
 
     REQUIRE(vector1 != vector2);
 }
+
+TEST_CASE("Adding a Vector to a Vector returns a Vector", "[vector][tuple][ch1]")
+{
+    const Vector vector1{ -3, 2, -5 };
+    const Vector vector2{ -2, 3, 1 };
+
+    const Vector expectedResult = { -5, 5, -4 };
+    const Vector actualResult = vector1 + vector2;
+
+    REQUIRE(expectedResult == actualResult);
+}
 // NOLINTEND(cert-err58-cpp)

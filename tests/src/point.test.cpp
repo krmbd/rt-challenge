@@ -2,6 +2,7 @@
 
 #include "point.hpp"
 #include "util.hpp"
+#include "vector.hpp"
 
 // NOLINTBEGIN(cert-err58-cpp)
 TEST_CASE("A Point is a tuple with w = 1", "[point][tuple][ch1]")
@@ -36,5 +37,16 @@ TEST_CASE("Equality for two slightly different Points", "[point]")
     const Point point2{ 1, 2, 3 - EPSILON * 2 };
 
     REQUIRE(point1 != point2);
+}
+
+TEST_CASE("Adding a Vector to a Point returns a Point", "[point][vector][tuple][ch1]")
+{
+    const Point point{ 3, -2, 5 };
+    const Vector vector{ -2, 3, 1 };
+
+    const Point expectedResult = { 1, 1, 6 };
+    const Point actualResult = point + vector;
+
+    REQUIRE(expectedResult == actualResult);
 }
 // NOLINTEND(cert-err58-cpp)

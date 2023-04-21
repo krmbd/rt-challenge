@@ -1,4 +1,5 @@
 #include "point.hpp"
+#include "vector.hpp"
 
 bool operator==(Point lhs, Point rhs)
 {
@@ -9,4 +10,9 @@ std::ostream& operator<<(std::ostream& ostream, Point point)
 {
     ostream << "{ " << point.x << ", " << point.y << ", " << point.z << " }";
     return ostream;
+}
+
+Point operator+(Point point, Vector vector)
+{
+    return Point{ point.x + vector.x, point.y + vector.y, point.z + vector.z };
 }

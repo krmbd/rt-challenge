@@ -26,3 +26,8 @@ Vector operator-(Point point1, Point point2)
 {
     return Vector{ point1.x - point2.x, point1.y - point2.y, point1.z - point2.z };
 }
+
+Vector operator-(Vector vector)
+{
+    return Vector{ -vector.x, -vector.y, -vector.z };
+}

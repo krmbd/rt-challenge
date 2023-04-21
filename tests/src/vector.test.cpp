@@ -71,4 +71,14 @@ TEST_CASE("Substracting a Point from a Point returns a Vector", "[point][vector]
 
     REQUIRE(expectedResult == actualResult);
 }
+
+TEST_CASE("Negating a Vector", "[vector][ch1]")
+{
+    const Vector vector{ 1, -2, 3 };
+
+    const Vector expectedNegation{ -1, 2, -3 };
+    const Vector actualNegation = -vector;
+
+    REQUIRE(expectedNegation == actualNegation);
+}
 // NOLINTEND(cert-err58-cpp)

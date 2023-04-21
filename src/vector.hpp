@@ -24,3 +24,4 @@ std::ostream& operator<<(std::ostream& ostream, Vector vector);
 Vector operator+(Vector vector1, Vector vector2);
 Vector operator-(Vector vector1, Vector vector2);
 Vector operator-(Point point1, Point point2);
+Vector operator-(Vector vector);

@@ -205,4 +205,26 @@ TEST_CASE("The dot product of two Vectors", "[vector][ch1]")
 
     REQUIRE_THAT(expectedResult, WithinAbs(actualResult, EPSILON));
 }
+
+TEST_CASE("The cross product of two Vectors", "[vector][ch1]")
+{
+    const Vector vector1{ 1, 2, 3 };
+    const Vector vector2{ 2, 3, 4 };
+
+    SECTION("Cross({ 1, 2, 3 }, { 2, 3, 4 })")
+    {
+        const Vector expectedResult{ -1, 2, -1 };
+        const Vector actualResult = Cross(vector1, vector2);
+
+        REQUIRE(expectedResult == actualResult);
+    }
+
+    SECTION("Cross({ 2, 3, 4 }, { 1, 2, 3 })")
+    {
+        const Vector expectedResult{ 1, -2, 1 };
+        const Vector actualResult = Cross(vector2, vector1);
+
+        REQUIRE(expectedResult == actualResult);
+    }
+}
 // NOLINTEND(cert-err58-cpp)

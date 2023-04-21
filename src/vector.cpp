@@ -58,3 +58,9 @@ double Dot(Vector vector1, Vector vector2)
 {
     return vector1.x * vector2.x + vector1.y * vector2.y + vector1.z * vector2.z;
 }
+
+Vector Cross(Vector vector1, Vector vector2)
+{
+    return Vector{ vector1.y * vector2.z - vector1.z * vector2.y, vector1.z * vector2.x - vector1.x * vector2.z,
+                   vector1.x * vector2.y - vector1.y * vector2.x };
+}

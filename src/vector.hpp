@@ -16,13 +16,5 @@ public:
     static constexpr int w{ 0 };
 };
 
-inline bool operator==(const Vector lhs, const Vector rhs)
-{
-    return AreAlmostEqual(lhs.x, rhs.x) && AreAlmostEqual(lhs.y, rhs.y) && AreAlmostEqual(lhs.z, rhs.z);
-}
-
-inline std::ostream& operator<<(std::ostream& ostream, const Vector vector)
-{
-    ostream << "{ " << vector.x << ", " << vector.y << ", " << vector.z << " }";
-    return ostream;
-}
+bool operator==(Vector lhs, Vector rhs);
+std::ostream& operator<<(std::ostream& ostream, Vector vector);

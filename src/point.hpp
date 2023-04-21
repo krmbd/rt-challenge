@@ -16,13 +16,5 @@ public:
     static constexpr int w{ 1 };
 };
 
-inline bool operator==(const Point lhs, const Point rhs)
-{
-    return AreAlmostEqual(lhs.x, rhs.x) && AreAlmostEqual(lhs.y, rhs.y) && AreAlmostEqual(lhs.z, rhs.z);
-}
-
-inline std::ostream& operator<<(std::ostream& ostream, const Point point)
-{
-    ostream << "{ " << point.x << ", " << point.y << ", " << point.z << " }";
-    return ostream;
-}
+bool operator==(Point lhs, Point rhs);
+std::ostream& operator<<(std::ostream& ostream, Point point);

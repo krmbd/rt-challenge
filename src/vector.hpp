@@ -29,3 +29,4 @@ Vector operator*(double scalar, Vector vector);
 Vector operator/(Vector vector, double scalar);
 
 double Magnitude(Vector vector);
+Vector Normalize(Vector vector);

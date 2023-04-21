@@ -48,3 +48,8 @@ double Magnitude(Vector vector)
 {
     return std::sqrt(vector.x * vector.x + vector.y * vector.y + vector.z * vector.z);
 }
+
+Vector Normalize(Vector vector)
+{
+    return vector / Magnitude(vector);
+}

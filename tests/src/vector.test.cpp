@@ -6,6 +6,8 @@
 #include "util.hpp"
 #include "vector.hpp"
 
+using Catch::Matchers::WithinAbs;
+
 // NOLINTBEGIN(cert-err58-cpp)
 TEST_CASE("A Vector is a tuple with w = 0", "[vector][tuple][ch1]")
 {
@@ -108,8 +110,6 @@ TEST_CASE("Dividing a Vector by a scalar", "[vector][ch1]")
 
 TEST_CASE("Computing the Magnitude of a Vector", "[vector][ch1]") // NOLINT(readability-*)
 {
-    using Catch::Matchers::WithinAbs;
-
     SECTION("Magnitude of Vector{ 1, 0, 0 }")
     {
         const Vector vector{ 1, 0, 0 };
@@ -159,5 +159,39 @@ TEST_CASE("Computing the Magnitude of a Vector", "[vector][ch1]") // NOLINT(read
 
         REQUIRE_THAT(expectedMagnitude, WithinAbs(actualMagnitude, EPSILON));
     }
+}
+
+TEST_CASE("Normalizing a Vector", "[vector][ch1]")
+{
+    SECTION("Normalizing Vector{ 4, 0, 0 }")
+    {
+        const Vector vector{ 4, 0, 0 };
+
+        const Vector expectedNormalized{ 1, 0, 0 };
+        const Vector actualNormalized = Normalize(vector);
+
+        REQUIRE(expectedNormalized == actualNormalized);
+    }
+
+    SECTION("Normalizing Vector{ 1, 2, 3 }")
+    {
+        const Vector vector{ 1, 2, 3 };
+
+        const Vector expectedNormalized{ 0.26726, 0.53452, 0.80178 };
+        const Vector actualNormalized = Normalize(vector);
+
+        REQUIRE(expectedNormalized == actualNormalized);
+    }
+}
+
+TEST_CASE("The magnitude of a normalized Vector is 1", "[vector][ch1]")
+{
+    const Vector vector{ 1, 2, 3 };
+    const Vector normalizedVector = Normalize(vector);
+
+    const double expectedMagnitude{ 1.0 };
+    const double actualMagnitude = Magnitude(normalizedVector);
+
+    REQUIRE_THAT(expectedMagnitude, WithinAbs(actualMagnitude, EPSILON));
 }
 // NOLINTEND(cert-err58-cpp)

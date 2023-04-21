@@ -4,6 +4,8 @@
 
 #include "util.hpp"
 
+class Point;
+
 class Vector
 {
 public:
@@ -20,3 +22,5 @@ bool operator==(Vector lhs, Vector rhs);
 std::ostream& operator<<(std::ostream& ostream, Vector vector);
 
 Vector operator+(Vector vector1, Vector vector2);
+Vector operator-(Vector vector1, Vector vector2);
+Vector operator-(Point point1, Point point2);

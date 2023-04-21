@@ -22,3 +22,4 @@ bool operator==(Point lhs, Point rhs);
 std::ostream& operator<<(std::ostream& ostream, Point point);
 
 Point operator+(Point point, Vector vector);
+Point operator-(Point point, Vector vector);

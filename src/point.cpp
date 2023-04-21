@@ -16,3 +16,8 @@ Point operator+(Point point, Vector vector)
 {
     return Point{ point.x + vector.x, point.y + vector.y, point.z + vector.z };
 }
+
+Point operator-(Point point, Vector vector)
+{
+    return Point{ point.x - vector.x, point.y - vector.y, point.z - vector.z };
+}

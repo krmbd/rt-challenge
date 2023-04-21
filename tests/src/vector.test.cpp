@@ -1,5 +1,6 @@
 #include <catch2/catch_test_macros.hpp>
 
+#include "point.hpp"
 #include "util.hpp"
 #include "vector.hpp"
 
@@ -45,6 +46,28 @@ TEST_CASE("Adding a Vector to a Vector returns a Vector", "[vector][tuple][ch1]"
 
     const Vector expectedResult = { -5, 5, -4 };
     const Vector actualResult = vector1 + vector2;
+
+    REQUIRE(expectedResult == actualResult);
+}
+
+TEST_CASE("Substracting a Vector from a Vector returns a Vector", "[vector][tuple][ch1]")
+{
+    const Vector vector1{ 3, 2, 1 };
+    const Vector vector2{ 5, 6, 7 };
+
+    const Vector expectedResult = { -2, -4, -6 };
+    const Vector actualResult = vector1 - vector2;
+
+    REQUIRE(expectedResult == actualResult);
+}
+
+TEST_CASE("Substracting a Point from a Point returns a Vector", "[point][vector][tuple][ch1]")
+{
+    const Point point1{ 3, 2, 1 };
+    const Point point2{ 5, 6, 7 };
+
+    const Vector expectedResult = { -2, -4, -6 };
+    const Vector actualResult = point1 - point2;
 
     REQUIRE(expectedResult == actualResult);
 }

@@ -1,4 +1,5 @@
 #include "vector.hpp"
+#include "point.hpp"
 
 bool operator==(Vector lhs, Vector rhs)
 {
@@ -14,4 +15,14 @@ std::ostream& operator<<(std::ostream& ostream, Vector vector)
 Vector operator+(Vector vector1, Vector vector2)
 {
     return Vector{ vector1.x + vector2.x, vector1.y + vector2.y, vector1.z + vector2.z };
+}
+
+Vector operator-(Vector vector1, Vector vector2)
+{
+    return Vector{ vector1.x - vector2.x, vector1.y - vector2.y, vector1.z - vector2.z };
+}
+
+Vector operator-(Point point1, Point point2)
+{
+    return Vector{ point1.x - point2.x, point1.y - point2.y, point1.z - point2.z };
 }

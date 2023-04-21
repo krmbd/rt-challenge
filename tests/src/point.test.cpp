@@ -49,4 +49,15 @@ TEST_CASE("Adding a Vector to a Point returns a Point", "[point][vector][tuple][
 
     REQUIRE(expectedResult == actualResult);
 }
+
+TEST_CASE("Substracting a Vector from a Point returns a Point", "[point][vector][tuple][ch1]")
+{
+    const Point point{ 3, 2, 1 };
+    const Vector vector{ 5, 6, 7 };
+
+    const Point expectedResult = { -2, -4, -6 };
+    const Point actualResult = point - vector;
+
+    REQUIRE(expectedResult == actualResult);
+}
 // NOLINTEND(cert-err58-cpp)

@@ -1,4 +1,6 @@
 #include <catch2/catch_test_macros.hpp>
+#include <catch2/matchers/catch_matchers_floating_point.hpp>
+#include <cmath>
 
 #include "point.hpp"
 #include "util.hpp"
@@ -102,5 +104,60 @@ TEST_CASE("Dividing a Vector by a scalar", "[vector][ch1]")
     const Vector actualResult = vector / scalar;
 
     REQUIRE(expectedResult == actualResult);
+}
+
+TEST_CASE("Computing the Magnitude of a Vector", "[vector][ch1]") // NOLINT(readability-*)
+{
+    using Catch::Matchers::WithinAbs;
+
+    SECTION("Magnitude of Vector{ 1, 0, 0 }")
+    {
+        const Vector vector{ 1, 0, 0 };
+
+        const double expectedMagnitude = 1;
+        const double actualMagnitude = Magnitude(vector);
+
+        REQUIRE_THAT(expectedMagnitude, WithinAbs(actualMagnitude, EPSILON));
+    }
+
+    SECTION("Magnitude of Vector{ 0, 1, 0 }")
+    {
+        const Vector vector{ 0, 1, 0 };
+
+        const double expectedMagnitude = 1;
+        const double actualMagnitude = Magnitude(vector);
+
+        REQUIRE_THAT(expectedMagnitude, WithinAbs(actualMagnitude, EPSILON));
+    }
+
+    SECTION("Magnitude of Vector{ 0, 0, 1 }")
+    {
+        const Vector vector{ 0, 0, 1 };
+
+        const double expectedMagnitude = 1;
+        const double actualMagnitude = Magnitude(vector);
+
+        REQUIRE_THAT(expectedMagnitude, WithinAbs(actualMagnitude, EPSILON));
+    }
+
+    SECTION("Magnitude of Vector{ 1, 2, 3 }")
+    {
+        const Vector vector{ 1, 2, 3 };
+
+        const double expectedMagnitude = std::sqrt(14.0);
+        const double actualMagnitude = Magnitude(vector);
+
+        REQUIRE_THAT(expectedMagnitude, WithinAbs(actualMagnitude, EPSILON));
+    }
+
+    SECTION("Magnitude of Vector{ -1, -2, -3 }")
+    {
+        const Vector vector{ -1, -2, -3 };
+
+        const double expectedMagnitude = std::sqrt(14.0);
+        const double actualMagnitude = Magnitude(vector);
+
+        REQUIRE_THAT(expectedMagnitude, WithinAbs(actualMagnitude, EPSILON));
+    }
 }
 // NOLINTEND(cert-err58-cpp)

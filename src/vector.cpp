@@ -1,5 +1,7 @@
-#include "vector.hpp"
+#include <cmath>
+
 #include "point.hpp"
+#include "vector.hpp"
 
 bool operator==(Vector lhs, Vector rhs)
 {
@@ -40,4 +42,9 @@ Vector operator*(double scalar, Vector vector)
 Vector operator/(Vector vector, double scalar)
 {
     return (1 / scalar) * vector;
+}
+
+double Magnitude(Vector vector)
+{
+    return std::sqrt(vector.x * vector.x + vector.y * vector.y + vector.z * vector.z);
 }

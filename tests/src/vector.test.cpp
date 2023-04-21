@@ -81,4 +81,26 @@ TEST_CASE("Negating a Vector", "[vector][ch1]")
 
     REQUIRE(expectedNegation == actualNegation);
 }
+
+TEST_CASE("Multiplying a Vector by a scalar", "[vector][ch1]")
+{
+    const Vector vector{ 1, -2, 3 };
+    const double scalar{ 3.5 };
+
+    const Vector expectedResult{ 3.5, -7, 10.5 };
+    const Vector actualResult = scalar * vector;
+
+    REQUIRE(expectedResult == actualResult);
+}
+
+TEST_CASE("Dividing a Vector by a scalar", "[vector][ch1]")
+{
+    const Vector vector{ 1, -2, 3 };
+    const double scalar{ 2 };
+
+    const Vector expectedResult{ 0.5, -1, 1.5 };
+    const Vector actualResult = vector / scalar;
+
+    REQUIRE(expectedResult == actualResult);
+}
 // NOLINTEND(cert-err58-cpp)

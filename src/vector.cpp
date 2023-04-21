@@ -31,3 +31,13 @@ Vector operator-(Vector vector)
 {
     return Vector{ -vector.x, -vector.y, -vector.z };
 }
+
+Vector operator*(double scalar, Vector vector)
+{
+    return Vector{ scalar * vector.x, scalar * vector.y, scalar * vector.z };
+}
+
+Vector operator/(Vector vector, double scalar)
+{
+    return (1 / scalar) * vector;
+}

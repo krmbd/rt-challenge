@@ -12,9 +12,9 @@ public:
     Point() = delete;
     Point(double x, double y, double z) : x{ x }, y{ y }, z{ z } {}
 
-    const double x{};
-    const double y{};
-    const double z{};
+    double x{};
+    double y{};
+    double z{};
     static constexpr int w{ 1 };
 };
 

@@ -30,3 +30,4 @@ Vector operator/(Vector vector, double scalar);
 
 double Magnitude(Vector vector);
 Vector Normalize(Vector vector);
+double Dot(Vector vector1, Vector vector2);

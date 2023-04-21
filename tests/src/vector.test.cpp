@@ -194,4 +194,15 @@ TEST_CASE("The magnitude of a normalized Vector is 1", "[vector][ch1]")
 
     REQUIRE_THAT(expectedMagnitude, WithinAbs(actualMagnitude, EPSILON));
 }
+
+TEST_CASE("The dot product of two Vectors", "[vector][ch1]")
+{
+    const Vector vector1{ 1, 2, 3 };
+    const Vector vector2{ 2, 3, 4 };
+
+    const double expectedResult{ 20.0 };
+    const double actualResult = Dot(vector1, vector2);
+
+    REQUIRE_THAT(expectedResult, WithinAbs(actualResult, EPSILON));
+}
 // NOLINTEND(cert-err58-cpp)

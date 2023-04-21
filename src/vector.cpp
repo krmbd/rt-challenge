@@ -53,3 +53,8 @@ Vector Normalize(Vector vector)
 {
     return vector / Magnitude(vector);
 }
+
+double Dot(Vector vector1, Vector vector2)
+{
+    return vector1.x * vector2.x + vector1.y * vector2.y + vector1.z * vector2.z;
+}
